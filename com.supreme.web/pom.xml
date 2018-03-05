@@ -42,6 +42,11 @@
 			<artifactId>spring-webflow</artifactId>
 			<version>2.3.4.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>com.arronlong</groupId>
+			<artifactId>httpclientutil</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<pluginManagement>
