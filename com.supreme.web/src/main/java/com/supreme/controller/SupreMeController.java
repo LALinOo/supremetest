@@ -18,24 +18,26 @@ public class SupreMeController {
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String Test() {
 		System.out.println("caonima");
-		// 请求头
+		// 璇锋眰澶�
 
-		// 请求参数
+		// 璇锋眰鍙傛暟
 
-		// 设置COOKIE
+		// 璁剧疆COOKIE
 		// HttpClientContext context=new HttpClientContext();
 
 		Header[] headers = HttpHeader.custom().cookie(
-				"__utma=74692624.1679350852.1520268431.1520268431.1520268431.1; __utmc=74692624; __utmz=74692624.1520268431.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1; __utmb=74692624.1.10.1520268431")
-				.host("Host: www.supremenewyork.com")
+				"mp_c5c3c493b693d7f413d219e72ab974b2_mixpanel=%7B%22distinct_id%22%3A%20%22161fa0c24081d-05e501b3596b9a-414f0120-ffc00-161fa0c240ac0%22%2C%22Store%20Location%22%3A%20%22US%20Web%22%2C%22Platform%22%3A%20%22Web%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%7D; __utmt=1; __utma=74692624.398576083.1520318557.1520318557.1520318557.1; __utmb=74692624.1.10.1520318557; __utmc=74692624; __utmz=74692624.1520318557.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); mp_mixpanel__c=1")
+				.host("www.supremenewyork.com")
 				.connection("keep-alive")
 				.accept("*/*;q=0.5, text/javascript, application/javascript, application/ecmascript, application/x-ecmascript")
 				.other("Origin", "http://www.supremenewyork.com")
-				.other("X-CSRF-Token", "gTXZ6UbQ71XZkrIokgFwE4AXX9lKyozWe0NmPOmUqEpkAuVoBnApzMFGBeQxeQPUBWWGNDebJDMipnkdRNDJWw==")
+				.other("X-CSRF-Token", "uoMrwBfdjoUoSUTeBPAPLdX0HwDmE1I+0gD0pcuv5LkSKy3EvOkYkDMT3Kuwvxd8Xlf405vajGSapLiVEyCWLw==")
 				.other("X-Requested-With", " XMLHttpRequest")
 				.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36")
 				.contentType("application/x-www-form-urlencoded; charset=UTF-8")
-				.referer("http://www.supremenewyork.com/shop/accessories/x5fy32h08/u2xc8r14q")
+				.referer("http://www.supremenewyork.com/shop/accessories/jz9ugd3mp/yybt603d8")
+				.acceptEncoding("gzip, deflate")
+				.acceptLanguage("zh-CN,zh;q=0.8")
 				.build();
 
 		HCB hcb = null;
@@ -47,17 +49,17 @@ public class SupreMeController {
 		}
 		HttpClient client = hcb.build();
 		
-		// 超时
-		// 启用连接池，每个路由最大创建10个链接，总连接数限制为100个
-		// https，支持自定义ssl证书路径和密码，ssl(String keyStorePath, String keyStorepass)
-		// 重试5次
+		// 瓒呮椂
+		// 鍚敤杩炴帴姹狅紝姣忎釜璺敱鏈�澶у垱寤�10涓摼鎺ワ紝鎬昏繛鎺ユ暟闄愬埗涓�100涓�
+		// https锛屾敮鎸佽嚜瀹氫箟ssl璇佷功璺緞鍜屽瘑鐮侊紝ssl(String keyStorePath, String keyStorepass)
+		// 閲嶈瘯5娆�
 
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("utf8", "✓");
 		map.put("st", "18393");
 		map.put("s", "50881");
-		map.put("commit", "カートに入れる");
-		HttpConfig config = HttpConfig.custom().url("http://www.supremenewyork.com/shop/4852/add").map(map)
+		map.put("commit", "add to cart");
+		HttpConfig config = HttpConfig.custom().url("http://www.supremenewyork.com/shop/171219/add").map(map)
 				.client(client).encoding("utf-8").headers(headers);
 		String result2 = "";
 		try {
@@ -65,7 +67,7 @@ public class SupreMeController {
 		} catch (HttpProcessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} // post请求
+		} // post璇锋眰
 		System.out.print(result2);
 		return "showStudentInfo";
 	}
